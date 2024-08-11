@@ -1,4 +1,4 @@
-/* Code for this test was adapted from: https://medium.com/@hamstu/recreating-the-firewatch-parallax-effect-213694d42f4e */
+/* Code for this demo was adapted from: https://medium.com/@hamstu/recreating-the-firewatch-parallax-effect-213694d42f4e */
 body {
     background: #415a6c;
     margin: 0;
@@ -67,19 +67,19 @@ body {
     position: relative;
 }
 
-
+/* Styling for page contents, underneath the parallax bg section*/
 .content {
-    /* Styling for page contents, underneath the parallax bg section*/
+    color: #fff;
+    text-align: center;
     position: absolute;
     /* Put the content right under the full page view */
     top: 100%;
     background: #0f1e25;
     width: 100%;
     min-height: 1500px;
+    padding-top: 2em;
 }
 .content h1 {
-    color: #fff;
     font-size: 2em;
     text-transform: uppercase;
-    text-align: center;
 }
