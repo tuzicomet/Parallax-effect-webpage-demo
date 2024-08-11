@@ -63,9 +63,9 @@ body {
 .content {
     /* Styling for page contents, underneath the parallax bg section*/
     position: absolute;
-    top: 55em;
-    background: #0f1e25;
     /* Put the content right under the full page view */
+    top: 100%;
+    background: #0f1e25;
     width: 100%;
     min-height: 1500px;
 }
