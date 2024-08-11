@@ -53,10 +53,18 @@ body {
     z-index: 25;
     background-image: url('../images/parallax-background-layer6.png');
 }
+
+/* Final layer is non-parallax, and sticks with the content below it */
 .layer-7 {
     top: -136px;
     z-index: 30;
     background-image: url('../images/parallax-background-layer7.png');
+    /* The below are properties needed from .parallax-layer to make it show properly */
+    width: 100%;
+    height: 1080px;
+    background-repeat: repeat-x;
+    /* Use position relative or absolute to make it move normally */
+    position: relative;
 }
 
 
