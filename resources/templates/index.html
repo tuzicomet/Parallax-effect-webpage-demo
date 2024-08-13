@@ -10,27 +10,89 @@
         browser tabs or bookmarks, etc
     -->
     <link rel="icon" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+    <!-- Google Fonts link for DM Serif Display, which will mainly be used for the header -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/homepage.css">
 </head>
 <body>
 
-<!-- Parallax Background -->
-<div class="parallax-container">
-    <div class="parallax-layer layer-1" data-parallax-speed="0.05" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-2" data-parallax-speed="0.1" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-3" data-parallax-speed="0.2" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-4" data-parallax-speed="0.3" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-5" data-parallax-speed="0.5" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-6" data-parallax-speed="0.7" data-max-scroll="565"></div>
+
+
+<div class="header-box">
+    <!-- Header content -->
+
+    <!-- Three-bar menu icon -->
+    <!-- NOTE: This is an HTML entity, alternatively could use an image -->
+    <div class="menu-icon">&#9776;</div>
+
+    <div class="regular-header">
+        <!-- Regular header (header shown when at top of page) -->
+        <div class="Header">
+
+            <!-- First third of the regular header-->
+            <div class="regular-header-third"></div>
+
+            <!-- The logo (text+icon) for the regular header -->
+            <div class="header-logo">
+                <!-- Whole logo is a link to the home page -->
+                <a href="">
+                    <span class="logo-text">Leonard's Demo</span> <!--Text part of the logo-->
+
+                    <img src="../static/images/logo150.png"
+                         alt="Botanica logo" class="logo-icon"> <!--icon part of the logo-->
+
+                </a>
+            </div>
+
+            <!-- Link to the login page -->
+            <span class="login-button">
+                <div class="login-text">
+                    <!-- Functionality not added -->
+                    <a href="">
+                        Login
+                    </a>
+                </div>
+            </span>
+
+        </div>
+
+        <div class="navigation-box">
+            <!-- Navigation menu items -->
+            <!-- Links not implemented yet -->
+            <a href="">Home</a> |
+            <a href="">Forum</a> |
+            <a href="">Marketplace</a>
+        </div>
+    </div>
+
 </div>
 
-<div class="layer-7"></div>
+<div class="background-container">
+    <!-- Parallax Background -->
+    <div class="parallax-container">
+        <div class="parallax-layer layer-1" data-parallax-speed="0.05" data-max-scroll="565"></div>
+        <div class="parallax-layer layer-2" data-parallax-speed="0.1" data-max-scroll="565"></div>
+        <div class="parallax-layer layer-3" data-parallax-speed="0.2" data-max-scroll="565"></div>
+        <div class="parallax-layer layer-4" data-parallax-speed="0.3" data-max-scroll="565"></div>
+        <div class="parallax-layer layer-5" data-parallax-speed="0.5" data-max-scroll="565"></div>
+        <div class="parallax-layer layer-6" data-parallax-speed="0.7" data-max-scroll="565"></div>
+    </div>
+
+    <div class="layer-7"></div>
+</div>
 
 <!-- Page content section -->
 <div class="content">
-    <h1>Looking for Adventures?</h1>
-    <h4>A whole world awaits you.</h4>
+    <h1>Seeking Adventures?</h1>
+    <h4>
+        Website demo by Leonard Lau
+    </h4>
 </div>
 
 <script src="../static/js/parallax.js"></script>

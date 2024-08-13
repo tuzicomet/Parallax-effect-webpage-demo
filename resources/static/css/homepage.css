@@ -1,0 +1,164 @@
+/*
+    style.css
+
+    Styles for the test demo website.
+    Adapted from the stylesheet from my Botanica project.
+
+    Author: Leonard Lau
+    Last Updated: 14/08/2024
+*/
+
+/* Styling for html and body */
+html, body {
+    font-family: "Segoe UI";
+    background-color: rgb(27 29 30);
+    color: white;
+    margin: 0; /* Remove default margin to ensure full-width */
+}
+
+/* Styling for links */
+a {
+    color: inherit; /* Inherit color from the parent (normal text color) */
+    text-decoration: underline; /* Underline the link */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Styling for when hovering over links */
+a:hover {
+    color: rgb(16, 117, 60); /* Change link color to green on hover */
+}
+
+/* styling for the content block on the page (see base.html) */
+.content {
+    /*
+        using these so that we can make sure that the footer is attached to the bottom,
+
+        NOTE: with the current implementation, even if the content is empty, the footer is still
+        pushed to be below the screen (i.e. you always need to scroll down to see it). I'm not
+        exactly sure why, but probably because the header is not part of .content so it pushes
+        it down. Regardless, I think it's fine so I'm keeping it.
+    */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-box, .navigation-box {
+    position: relative;
+    z-index: 1;
+}
+
+/* Additional styles for the regular header */
+.Header {
+    padding: 0.5em;
+    margin: 0; /* Remove margin to ensure full-width */
+    /* The following are used so that the Botanica text and the logo are centered together */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Styling for the Botanica logo text */
+.logo-text {
+    font-size: 3em; /* Twice the font size of the parent element (body) */
+    margin-top: 0.1em; /* Adjust top margin */
+    margin-bottom: 0.1em;  /* Adjust bottom margin */
+}
+
+/* Styling for the icon logo */
+.logo-icon {
+    width: 2.6em; /* Adjust the width of the logo as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 0.3em; /* Adjust the spacing between the logo and text */
+    vertical-align: text-bottom; /* vertically align the icon more with the text */
+}
+
+/* The first/left third of the regular header flexbox */
+.regular-header-third {
+    flex: 1 1 10%; /* flex-grow: 1, flex-shrink: 1, flex-basis: 10% */
+    display: flex;
+    justify-content: flex-start; /* put at the start of the flexbox */
+    align-items: center;
+}
+
+/*
+The logo part (text+icon) of the regular header flexbox
+aka the second/center third of the regular header
+*/
+.header-logo {
+    /*
+        flex-grow: 1, flex-shrink: 1, flex-basis: 80%
+        'flex-basis: 80%' makes it take up 80% of the flexbox, which I want since it
+        is the biggest part of the header, makes it so that if I minimise the screen,
+        the text and logo wont get separated since they have more space
+    */
+    flex: 1 1 80%;
+    display: flex;
+    justify-content: center; /* put at the middle of the flexbox */
+    align-items: center;
+    /* Add styles specific to the regular header logo */
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1em;
+}
+
+/*
+    The login button on the regular header flexbox
+    aka the last/right third of the regular header
+*/
+.login-button {
+    flex: 1 1 10%; /* flex-grow: 1, flex-shrink: 1, flex-basis: 10% */
+    display: flex;
+    justify-content: flex-end; /* put at the end of the flexbox */
+    align-items: center;
+    font-weight: bold;
+}
+
+/* styling for the text on the login-button */
+.login-text {
+    /*
+        adding padding directly to login-button affects the entire flexbox,
+        so I am avoiding that by applying it here
+    */
+    padding-right: 1em;
+}
+
+/* styling for the regular navigation bar */
+.navigation-box {
+    padding: 0.6em;
+    margin: 0; /* Remove margin to ensure full-width */
+    padding-top: 0; /* Remove padding at the top */
+}
+
+/* styling for both the regular header and the navigation bar */
+.Header,
+.navigation-box {
+    text-align: center;
+    background-color: rgb(16, 117, 60);
+}
+
+/* Styling for links in the regular header and navigation bar */
+.Header a,
+.minimised-header a,
+.navigation-box a {
+    /* Remove underline and color change for links in header and navigation */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from the parent (normal text color) */
+}
+
+/* Styling for when hovering over links in the navigation bar */
+.navigation-box a:hover {
+    /* On hover, do not change link colour*/
+    color: inherit; /* Inherit color from the parent (normal text color) */
+    text-decoration: underline; /* Underline the link */
+}
+
+/* Styling for the menu icon (three horizontal bars) */
+.menu-icon {
+    font-size: 2em;
+    margin-left: 0.8em;
+    cursor: pointer; /* Add cursor pointer for indicating it's clickable */
+    z-index: 3; /* Set z-index to 3 to put it above most stuff */
+    position: fixed; /* Fix the icon to the top of the viewport */
+    margin-top: 0.7em;
+}
+}
