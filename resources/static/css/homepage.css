@@ -120,6 +120,7 @@ aka the second/center third of the regular header
         so I am avoiding that by applying it here
     */
     padding-right: 1em;
+    font-size: 1.3em;
 }
 
 /* styling for the regular navigation bar */
@@ -136,10 +137,11 @@ aka the second/center third of the regular header
     background-color: rgb(16, 117, 60);
 }
 
-/* Styling for links in the regular header and navigation bar */
+/* Styling for links that do not want to be highlighted or underlined */
 .Header a,
 .minimised-header a,
-.navigation-box a {
+.navigation-box a,
+.menu-bar-options a {
     /* Remove underline and color change for links in header and navigation */
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit color from the parent (normal text color) */
@@ -204,7 +206,7 @@ body.scrolled .navigation-box {
     font-size: 2em;
     margin-left: 0.8em;
     cursor: pointer; /* Add cursor pointer for indicating it's clickable */
-    z-index: 3; /* Set z-index to 3 to put it above most stuff */
+    z-index: 7; /* Set z-index to 3 to put it above most stuff */
     position: fixed; /* Fix the icon to the top of the viewport */
     margin-top: 0.7em;
 }
@@ -242,7 +244,7 @@ body.scrolled .minimised-header {
 .menu-bar.active {
     visibility: visible; /* Make it visible */
     transform: translateX(0); /* Move on-screen */
-    z-index: 2; /* Place at z-index 2 so it's on top of most other things */
+    z-index: 6; /* Place at z-index 6 so it's on top of most other things */
 }
 
 /* Styling for the overlay */
@@ -256,6 +258,7 @@ body.scrolled .minimised-header {
     transition: opacity 0.3s ease; /* Add a transition effect for smooth visibility changes */
     pointer-events: none; /* Initially, allow clicks to pass through the overlay */
     opacity: 0; /* Initially transparent */
+    z-index: 5;
 }
 
 /* Adjust the opacity when the menu is visible */
@@ -265,5 +268,12 @@ body.scrolled .minimised-header {
 }
 .overlay.open {
     opacity: 1;
-    z-index: 1; /* Place at z-index 1 so its below the menu bar, but over of other stuff */
+    z-index: 5; /* Place at z-index 5 so its below the menu bar, but over of other stuff */
+}
+
+/* Styling for the links inside of the side menu bar */
+.menu-bar-options {
+    top: 5em;
+    position: relative;
+    margin-left: 1.7em;
 }
