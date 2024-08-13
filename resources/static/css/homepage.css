@@ -127,7 +127,7 @@ aka the second/center third of the regular header
 .navigation-box {
     padding: 0.6em;
     margin: 0; /* Remove margin to ensure full-width */
-    padding-top: 0; /* Remove padding at the top */
+    margin-top: 5em; /* Place the navigation box under the header */
 }
 
 /* styling for both the regular header and the navigation bar */
@@ -135,6 +135,9 @@ aka the second/center third of the regular header
 .navigation-box {
     text-align: center;
     background-color: rgb(16, 117, 60);
+    /* Make the header and navigation bar sit above and not interact with other elements */
+    position: fixed;
+    width: 100%;
 }
 
 /* Styling for links that do not want to be highlighted or underlined */
