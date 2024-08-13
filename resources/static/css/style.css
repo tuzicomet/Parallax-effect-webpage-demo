@@ -24,32 +24,32 @@ body {
 .layer-1 {
     /* Adjust distance from top of frame */
     /* (Use this to adjust the y-axis positioning of layer) */
-    top: 0;
+    top: -20px;
     z-index: -10;
     background-image: url('../images/parallax-background-layer1.png');
 }
 .layer-2 {
-    top: 0;
+    top: 45px;
     z-index: -9;
     background-image: url('../images/parallax-background-layer2.png');
 }
 .layer-3 {
-    top: -30px;
+    top: -35px;
     z-index: -8;
     background-image: url('../images/parallax-background-layer3.png');
 }
 .layer-4 {
-    top: -34px;
+    top: -52px;
     z-index: -7;
     background-image: url('../images/parallax-background-layer4.png');
 }
 .layer-5 {
-    top: -36px;
+    top: -45px;
     z-index: -6;
     background-image: url('../images/parallax-background-layer5.png');
 }
 .layer-6 {
-    top: -72px;
+    top: -90px;
     z-index: -5;
     background-image: url('../images/parallax-background-layer6.png');
 }
@@ -57,7 +57,7 @@ body {
 /* Final layer is non-parallax, and sticks with the content below it */
 .layer-7 {
     top: -136px;
-    z-index: -4;
+    z-index: 0;
     background-image: url('../images/parallax-background-layer7.png');
     /* The below are properties needed from .parallax-layer to make it show properly */
     width: 100%;
