@@ -71,6 +71,29 @@
         </div>
     </div>
 
+    <!-- When scrolling down from the top, the header will be reduced to a minimised header bar-->
+    <div id="header-scroll" class="minimised-header">
+        <!-- Logo, including text and icon, for the minimised header -->
+        <div class="minimised-logo">
+            <a href="">
+                <span class="logo-text">Leonard's Demo</span> <!-- Could remove this part -->
+                <img src="../static/images/logo150.png"
+                     alt="Botanica logo" class="logo-icon">
+            </a>
+        </div>
+    </div>
+
+    <!--
+        Menu bar (initially hidden), this is the menu that pops up after pressing
+        the menu icon button
+    -->
+    <div class="menu-bar">
+        <!-- Add menu items here later -->
+    </div>
+
+    <!-- Overlay for dimming effect -->
+    <div class="overlay"></div>
+
 </div>
 
 <div class="background-container">
@@ -96,6 +119,11 @@
 </div>
 
 <script src="../static/js/parallax.js"></script>
+
+<!-- JavaScript file for the minimised header functionality -->
+<script src="../static/js/header-scroll.js"></script>
+<!-- JavaScript file for header menu functionality -->
+<script src="../static/js/header-menu.js"></script>
 
 </body>
 </html>

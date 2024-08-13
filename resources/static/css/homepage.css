@@ -152,6 +152,53 @@ aka the second/center third of the regular header
     text-decoration: underline; /* Underline the link */
 }
 
+/*
+    Styles for the regular header when the page is scrolled down.
+    Applied when the 'scrolled' class is present on the body, set by the header-scroll.js script
+*/
+body.scrolled .Header,
+body.scrolled .navigation-box {
+    display: none; /* Hide the regular header when the user scrolls down */
+}
+
+/* Additional styles for the minimised header bar */
+.minimised-header {
+    font-family: 'DM Serif Display', serif;
+    position: fixed; /* Fix the header at the top of the viewport */
+    top: 0; /* Position it at the top */
+    left: 0; /* Align it to the left edge */
+    width: 100%; /* Make it full-width */
+    height: 4em; /* Adjust the height of the thin green bar */
+    background-color: rgb(16, 117, 60);
+    opacity: 0; /* Start with zero opacity */
+    visibility: hidden; /* Start hidden */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: nowrap; /* Prevent wrapping of flex items to keep them in a single line */
+    align-items: center; /* Center items vertically */
+    /* The following line determines the transition for the bar disappearing */
+    /*transition: opacity 0.0s ease, visibility 0s linear 0.0s; */
+}
+
+/* Styling for links in the minimised header */
+.minimised-header a {
+    text-decoration: none; /* remove the underline */
+}
+
+/* Styling for hovering over links in the minimised header */
+.minimised-header a:hover {
+    color: inherit; /* Do not change colour */
+}
+
+/* Styling for the logo (text and icon) in the minimized header */
+.minimised-logo {
+    font-size: 0.8em;
+    /* The following are used so that the Botanica text and the logo are centered together */
+    flex-grow: 1; /* take up rest of line */
+    text-align: center; /* centre text */
+    /* The menu icon has 0.5 margin and fontsize 2, so we offset by that to properly centre */
+    margin-left: -2.5em;
+}
+
 /* Styling for the menu icon (three horizontal bars) */
 .menu-icon {
     font-size: 2em;
@@ -161,4 +208,62 @@ aka the second/center third of the regular header
     position: fixed; /* Fix the icon to the top of the viewport */
     margin-top: 0.7em;
 }
+
+/*
+Styling for the menu icon when the page has been scrolled down
+(i.e. minimised header bar should be active)
+*/
+body.scrolled .menu-icon {
+    margin-top: 0.25em; /* Reduce the top margin to align with the minimised header */
+}
+
+/* Show the minimised header bar when the user scrolls down */
+body.scrolled .minimised-header {
+    opacity: 1; /* Fade in by changing opacity to 1 */
+    visibility: visible; /* Make it visible */
+    /* the below transition makes the bar fade in when it appears */
+    transition: opacity 0.2s ease, visibility 0s linear; /* Add a smooth transition for opacity */
+}
+
+/* Styling for the menu bar, the green menu which pops up when clicking the menu icon */
+.menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20em; /* Adjust the width as needed */
+    height: 100%; /* Take up the full height of the viewport */
+    background-color: rgb(16, 117, 60);
+    visibility: hidden; /* Initially hidden */
+    transform: translateX(-100%); /* Move off-screen to the left */
+    transition: transform 0.3s ease; /* Add a smooth transition for visibility */
+}
+
+/* Styling to make the menu bar visible when toggled */
+.menu-bar.active {
+    visibility: visible; /* Make it visible */
+    transform: translateX(0); /* Move on-screen */
+    z-index: 2; /* Place at z-index 2 so it's on top of most other things */
+}
+
+/* Styling for the overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for opacity */
+    transition: opacity 0.3s ease; /* Add a transition effect for smooth visibility changes */
+    pointer-events: none; /* Initially, allow clicks to pass through the overlay */
+    opacity: 0; /* Initially transparent */
+}
+
+/* Adjust the opacity when the menu is visible */
+.menu-bar.open + .overlay {
+    pointer-events: auto; /* Enable clicks on the overlay when it's visible */
+    opacity: 1; /* Make the overlay fully visible */
+}
+.overlay.open {
+    opacity: 1;
+    z-index: 1; /* Place at z-index 1 so its below the menu bar, but over of other stuff */
 }
